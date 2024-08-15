@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lakuva</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="back_location">Back</string>
+    <string name="captured_image">Captured Image</string>
+    <string name="location">Location:</string>
+    <string name="logo_description">Lakuva</string>
+    <string name="capture">Capture</string>
+    <string name="map">Map</string>
+    <string name="camera">Camera</string>
+</resources>
