@@ -8,3 +8,7 @@ Option A: Camera
 
 Option B: Map
    You see all the potholes on the map. You can remove the pothole from the map.
+
+
+Current state:
+I haven't been able to train the pothole detection yet.
