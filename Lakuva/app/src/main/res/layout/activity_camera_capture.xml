@@ -59,6 +59,7 @@
         <Button
             android:id="@+id/camerabtn"
             android:backgroundTint="@color/background_button"
+            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
