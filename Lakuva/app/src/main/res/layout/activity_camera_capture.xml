@@ -58,6 +58,7 @@
         <!-- Button to trigger the camera capture -->
         <Button
             android:id="@+id/camerabtn"
+            android:backgroundTint="@color/background_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
