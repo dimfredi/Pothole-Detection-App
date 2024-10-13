@@ -58,12 +58,23 @@
         <!-- Button to trigger the camera capture -->
         <Button
             android:id="@+id/camerabtn"
-            android:backgroundTint="@color/background_button"
-            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/capture" />
+            android:backgroundTint="@color/background_button"
+            android:text="@string/capture"
+            android:textColor="@android:color/white" />
+
+        <!-- Button to trigger the camera capture -->
+        <Button
+            android:id="@+id/Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/background_button"
+            android:text="@string/submit"
+            android:textColor="@android:color/white"
+            android:visibility="gone"/>
     </RelativeLayout>
 
 </RelativeLayout>
