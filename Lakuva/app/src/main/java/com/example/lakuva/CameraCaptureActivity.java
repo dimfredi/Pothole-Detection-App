@@ -30,6 +30,9 @@ public class CameraCaptureActivity extends AppCompatActivity implements Location
     private ImageView CameraView;
     private TextView locationTextView;
 
+    private Button Submit;
+
+
     // Helpers for handling location and database operations
     private LocationHelper locationHelper;
     private LocationDatabaseHelper locationDatabaseHelper;
@@ -48,6 +51,7 @@ public class CameraCaptureActivity extends AppCompatActivity implements Location
         // Initialization of UI elements
         CameraView = findViewById(R.id.CameraView);
         Button camerabtn = findViewById(R.id.camerabtn);
+        Submit = findViewById(R.id.Submit);
         locationTextView = findViewById(R.id.locationTextView);
         ImageView back_button = findViewById(R.id.back_button);
 
@@ -67,6 +71,17 @@ public class CameraCaptureActivity extends AppCompatActivity implements Location
                 // Request location if camera permission is already granted
                 locationHelper.requestLocation();
             }
+        });
+
+
+        // submit button (initially hidden)
+        Submit.setOnClickListener(v -> {
+            // Save the location in the SQLite database
+            locationDatabaseHelper.addLocation(currentLatitude, currentLongitude);
+            Log.d(TAG, "Location saved: " + currentLatitude + ", " + currentLongitude);
+            Toast.makeText(this, "Location uploaded", Toast.LENGTH_SHORT).show();
+            // Hide Submit button after upload
+            Submit.setVisibility(Button.GONE);
         });
     }
 
@@ -94,10 +109,9 @@ public class CameraCaptureActivity extends AppCompatActivity implements Location
                 // Format and display the current location
                 @SuppressLint("DefaultLocale") String locationText = String.format("Location: %.4f, %.4f", currentLatitude, currentLongitude);
                 locationTextView.setText(locationText);
-                // Save the location in the SQLite database
-                locationDatabaseHelper.addLocation(currentLatitude, currentLongitude);
-                // Log the saved location
-                Log.d(TAG, "Location saved: " + currentLatitude + ", " + currentLongitude);
+
+                // Show Submit button after image is captured
+                Submit.setVisibility(Button.VISIBLE);
             }
         } else {
             // Show message if photo capture is canceled
